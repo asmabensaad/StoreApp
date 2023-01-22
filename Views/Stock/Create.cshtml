@@ -1,0 +1,88 @@
+﻿@model Stock
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Add New material</h2>
+			<hr />
+		</div>
+
+
+
+
+
+		
+		<div asp-validation-summary="All"></div>
+	<div class="mb-3">
+		<label asp-for="MSPEREF"></label>
+		<input asp-for="MSPEREF" class="form-control"/>
+		<span asp-validation-for="MSPEREF" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="position"></label>
+		    <input asp-for="position" class="form-control"/>
+			<span asp-validation-for="position" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Classe"></label>
+		    <input asp-for="Classe" class="form-control"/>
+			<span asp-validation-for="Classe" class="text-danger"></span>
+		</div>
+		
+		<div class="mb-3">
+			<label asp-for="Type"></label>
+		    <input asp-for="Type" class="form-control"/>
+			<span asp-validation-for="Type" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="designation"></label>
+		    <input asp-for="designation" class="form-control"/>
+			<span asp-validation-for="designation" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Constructeur"></label>
+		    <input asp-for="Constructeur" class="form-control"/>
+			<span asp-validation-for="Constructeur" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="fournisseur"></label>
+		    <input asp-for="fournisseur" class="form-control"/>
+			<span asp-validation-for="fournisseur" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="REFEXTERNE"></label>
+		    <input asp-for="REFEXTERNE" class="form-control"/>
+			<span asp-validation-for="REFEXTERNE" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="UNITE"></label>
+		    <input asp-for="UNITE" class="form-control"/>
+			<span asp-validation-for="UNITE" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PRICE"></label>
+		    <input asp-for="PRICE" class="form-control"/>
+			<span asp-validation-for="PRICE" class="text-danger"></span>
+		</div>
+
+
+
+		<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+		<a asp-controller="Stock" asp-action="Index" class="btn btn-secondary" style="width:150px">
+         Back to List
+		</a>
+
+	</div>
+
+</form>
+@section Scripts 
+{
+
+   @{
+	     <partial name="_ValidationScriptsPartial" />
+    }
+}
+

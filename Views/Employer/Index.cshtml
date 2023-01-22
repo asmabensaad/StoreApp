@@ -1,0 +1,61 @@
+﻿
+@model IEnumerable<Employer>;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class ="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+        <h2 class="text-primary">Employer List</h2>
+        </div>
+        <div class="col-6">
+            <div class="col-6 text-end">
+            <a asp-controller="Employer" asp-action="create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>&nbsp; add New Employer
+
+            </a>
+        
+    </div>
+</div>
+<br/> <br />
+
+ <table class="table table-bordered table-stripped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Employer Name
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+
+            </th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+
+         @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="50%">
+                    @obj.Name
+                    
+                </td>
+                <td width="50%">
+                    @obj.Role
+                    
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary">Login</button>
+                 @* <a href="#">Login</a>*@
+                </td>
+                </tr>
+        }
+
+
+    </tbody>
+    </table>

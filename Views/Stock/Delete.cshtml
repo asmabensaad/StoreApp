@@ -1,0 +1,37 @@
+﻿
+@model Stock
+<form method="post" asp-action="DeletePOST">
+	<input asp-for="MSPEREF" hidden />
+<div class="border p-3 mt-4">
+	<div class="row pb-2">
+		<h2 class="text-primary">Delete Material</h2>
+		<hr/>
+	</div>
+	@*<div asp-validation-summary="All"></div>*@
+	<div class="mb-3">
+		<label asp-for="MSPEREF"></label>
+		<input asp-for="MSPEREF"  disabled class="form-control"/>
+		
+		</div>
+		<div class="mb-3">
+			<label asp-for="position"></label>
+		    <input asp-for="position" disabled class="form-control"/>
+			
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+		<a asp-controller="stock" asp-action="Index" class="btn btn-secondary" style="width:150px">
+         Back to List
+		</a>
+
+	</div>
+
+
+</form>
+@section Scripts {
+
+   @{
+	<partial name="_ValidationScriptsPartial" />
+   }
+}
+
+

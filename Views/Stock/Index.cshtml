@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Stock>;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<partial name="_Notification" />
+
+<div class="border p-3 mt-4">
+<div class="container p-3">
+    <div class="row pt-4">
+    <div class="col-6">
+
+        <h2 class="text-primary">Material List</h2>
+    </div>
+    <div class="col-6 text-end">
+        <a asp-controller="Stock" asp-action="create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>&nbsp; Add New Material </a>
+
+            
+ </div>
+ </div>
+ 
+  <br/><br/>
+
+<table class="table table-hover table-bordered  " style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                 MSPEREF
+            </th>
+            <th>
+                 Position
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Type
+
+            </th>
+            <th>
+               Designation 
+            </th>
+            <th>
+               Constructor
+            </th>
+            <th>
+               Provider 
+            </th>
+
+            <th>
+              External_REF
+            </th>
+            <th>
+               UNIT
+            </th>
+            <th>
+               Price
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+         @foreach (var obj in Model)
+        {
+            <tr class="success">
+                <td width="50%">
+                    @obj.MSPEREF
+                    
+                </td>
+                <td width="50%">
+                    @obj.position
+                    
+                </td>
+                <td  width="50%" >
+                    @obj.Classe
+                    </td>
+                <td  width="50%" >
+                    @obj.Type
+                    </td>
+                <td  width="50%" >
+                    @obj.designation
+                    </td>
+                <td  width="50%" >
+                    @obj.Constructeur
+                    </td>
+                <td  width="50%" >
+                    @obj.fournisseur
+                    </td>
+                <td  width="50%" >
+                    @obj.REFEXTERNE
+                    </td>
+                <td  width="50%" >
+                    @obj.UNITE
+                    </td>
+                <td  width="50%" >
+                    @obj.PRICE
+                    </td>
+
+
+                     <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Stock" asp-action="Edit" asp-route-msperef="@obj.MSPEREF" 
+                        class="btn btn-primary mx-2 badge-pill" style="width:80px">
+                            <i class="bi bi-pencil-square"></i>Edit</a>
+
+                          
+                       <a asp-controller="Stock" asp-action="Delete" asp-route-msperef="@obj.MSPEREF"
+                        class="btn btn-danger mx-2  badge-pill" style="width:80px">  
+                        <i class="bi bi-trash-fill"></i>Delete</a>
+
+                        
+                    </div>
+                </td>
+
+
+       
+       </tr>
+
+        }
+</tbody>
+</table>
+
+
