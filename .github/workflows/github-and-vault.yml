@@ -14,7 +14,7 @@ jobs:
           echo SECRET_ID="$SECRET_ID" >> $GITHUB_ENV
 
        - name: Retreive the secret
-         uses: hashicorp/vault-action@v1.1.3
+         uses: hashicorp/vault-action@v
          with:
            url: http://localhost:8200
            method: approle
